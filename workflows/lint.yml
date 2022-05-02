@@ -64,3 +64,23 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+  lint-go:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Find changed go files
+        id: changed-go-files
+        uses: tj-actions/changed-files@v19
+        with:
+          files: |
+            **/*.go
+            go.mod
+            go.sum
+
+      - name: Lint go code (golangci-lint)
+        uses: golangci/golangci-lint-action@v3
+        if: steps.changed-go-files.outputs.any_changed == 'true'
+        with:
+          version: v1.45
