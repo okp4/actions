@@ -84,3 +84,14 @@ jobs:
         if: steps.changed-go-files.outputs.any_changed == 'true'
         with:
           version: v1.45
+
+  lint-sql:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Lint SQL files
+        uses: Bidaya0/sql-lint-in-action@v0.0.1
+        with:
+          path: "."
