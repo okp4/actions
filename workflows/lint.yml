@@ -95,3 +95,22 @@ jobs:
         uses: Bidaya0/sql-lint-in-action@v0.0.1
         with:
           path: "."
+
+  lint-ts:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Setup node environment (for building)
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.14.0
+
+      - name: Fetch dependencies
+        run: |
+          yarn
+
+      - name: Lint typescript
+        run: |
+          yarn lint
