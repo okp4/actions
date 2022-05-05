@@ -19,11 +19,11 @@ All the workflows and actions defined in this repository promotes the practices 
 - Publishing
 - Utilities
 
-## Workflows
+## ⚙️ Workflows
 
 The actions are organized arount serveral workflows, described hereafter.
 
-### Lint
+### 💚 Lint
 
 [workflows/lint.yml](workflows/lint.yml)
 
@@ -31,7 +31,7 @@ Part of the code quality analysis, ensure the homogeneity of the codebase.
 
 The workflow contains a large set of jobs to deal with different project typologies (technology, programming language...)
 
-### Test
+### 🧪 Test
 
 [workflows/test.yml](workflows/test.yml)
 
