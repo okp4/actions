@@ -28,3 +28,27 @@ jobs:
       - name: Test go project
         run: |
           make test-go
+
+  test-ts:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Setup node environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.14.0
+
+      - name: Fetch dependencies
+        run: |
+          yarn
+      - name: Test typescript
+        run: |
+          yarn coverage
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        if: github.actor != 'dependabot[bot]'
+        with:
+          files: ./coverage/lcov.info
+          verbose: true
