@@ -4,10 +4,10 @@ on:
   workflow_call:
 
   push:
-    branches: [ main ]
+    branches: [main]
 
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 concurrency:
   group: build-${{ github.ref }}
@@ -23,3 +23,18 @@ jobs:
       - name: Build docker image
         run: |
           docker build .
+
+  build-go:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Setup Go environment
+        uses: actions/setup-go@v3.0.0
+        with:
+          go-version: "1.17.6"
+
+      - name: Build go project
+        run: |
+          make build
