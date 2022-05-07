@@ -29,7 +29,7 @@ The actions are organized arount serveral workflows, described hereafter.
 
 Part of the code quality analysis, ensure the homogeneity of the codebase.
 
-The workflow contains a large set of jobs to deal with different project typologies (technology, programming language...)
+The workflow contains a large set of jobs to deal with different project typologies (technology, programming language...).
 
 ### 🧪 Test
 
@@ -37,7 +37,15 @@ The workflow contains a large set of jobs to deal with different project typolog
 
 Executes the tests present in the codebase.
 
-The workflow contains a large set of jobs to deal with different project typologies (technology, programming language...)
+The workflow contains a large set of jobs to deal with different project typologies (technology, programming language...).
+
+### Build
+
+[workflows/build.yml](workflows/build.yml)
+
+Build the different artifacts produced from the codebase.
+
+The workflow contains a large set of jobs to deal with different project typologies (technology, programming language...).
 
 ## Usage
 
