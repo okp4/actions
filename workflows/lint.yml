@@ -177,6 +177,35 @@ jobs:
         run: |
           poetry check
 
+  lint-python:
+    needs: lint-poetry
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+
+      - name: Install Python Poetry
+        uses: abatilo/actions-poetry@v2.1.4
+        with:
+          poetry-version: 1.1.11
+
+      - name: Install project dependencies
+        run: |
+          poetry install
+
+      - name: Lint python code (flake8)
+        run: |
+          poetry run flake8 --count --show-source --statistics
+
+      - name: Lint python code (
+        uses: jpetrucciani/mypy-check@0.930
+        with:
+          path: "."
+
   report-npm-new-dependencies:
     runs-on: ubuntu-20.04
     if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
