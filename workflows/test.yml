@@ -74,3 +74,27 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: test
+
+  test-python-poetry:
+    timeout-minutes: 30
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+
+      - name: Install Python Poetry
+        uses: abatilo/actions-poetry@v2.1.4
+        with:
+          poetry-version: 1.1.11
+
+      - name: Install project dependencies
+        run: |
+          poetry install
+
+      - name: Run unit tests
+        run: |
+          poetry run python -m unittest discover
