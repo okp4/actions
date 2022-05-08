@@ -4,7 +4,7 @@
 
 [![conventional commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
-## Purpose
+## 💡 Purpose
 
 This is a collection of GitHub Actions that we use for our projects @[okp4] and that can be useful to others.
 
@@ -39,7 +39,7 @@ Executes the tests present in the codebase.
 
 The workflow contains a large set of jobs to deal with different project typologies (technology, programming language...).
 
-### Build
+### 🏭 Build
 
 [workflows/build.yml](workflows/build.yml)
 
@@ -47,11 +47,11 @@ Build the different artifacts produced from the codebase.
 
 The workflow contains a large set of jobs to deal with different project typologies (technology, programming language...).
 
-## Usage
+## 🧑‍💻 Usage
 
 The workflows contain reusable GitHub actions that can be used as a base recipe for your workflow. Just pick the ones you're interrested in and add them to your `.github/workflows/xxxx.yml` workflow file in your repository.
 
-## Access Token
+### 🛡 Access Token
 
 Most jobs need a specific access token with appropriate permissions to run correctly. This token is named `OKP4_TOKEN`, and is defined at the level of the organization. If needed, read the documentation on creating a [PA token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token).
 
