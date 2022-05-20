@@ -25,7 +25,7 @@ The actions are organized arount serveral workflows, described hereafter.
 
 ### 💚 Lint
 
-[workflows/lint.yml](workflows/lint.yml)
+[workflows/lint.yml](src/.github/workflows/lint.yml)
 
 Part of the code quality analysis, ensure the homogeneity of the codebase.
 
@@ -33,7 +33,7 @@ The workflow contains a large set of jobs to deal with different project typolog
 
 ### 🧪 Test
 
-[workflows/test.yml](workflows/test.yml)
+[workflows/test.yml](src/.github/workflows/test.yml)
 
 Executes the tests present in the codebase.
 
@@ -41,7 +41,7 @@ The workflow contains a large set of jobs to deal with different project typolog
 
 ### 🏭 Build
 
-[workflows/build.yml](workflows/build.yml)
+[workflows/build.yml](src/.github/workflows/build.yml)
 
 Build the different artifacts produced from the codebase.
 
