@@ -14,7 +14,7 @@ jobs:
       KREW_VERSION: v0.4.2
     steps:
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.OKP4_TOKEN }}
@@ -23,6 +23,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt install --no-install-recommends -y graphviz=2.42.2-3build2
+
       - name: Set up Go
         uses: actions/setup-go@v2.1.4
         with:
