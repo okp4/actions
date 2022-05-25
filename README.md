@@ -47,6 +47,14 @@ Build the different artifacts produced from the codebase.
 
 The workflow contains a large set of jobs to deal with different project typologies (technology, programming language...).
 
+### 🚀 Publish
+
+[workflows/publish.yml](src/.github/workflows/publish.yml)
+
+Publish the different artifacts produced from the codebase.
+
+The workflow contains a large set of jobs to deal with different project typologies (technology, programming language...).
+
 ### 🪄 Auto merge
 
 [workflows/auto-merge.yml](src/.github/workflows/auto-merge.yml)
