@@ -53,6 +53,12 @@ The workflow contains a large set of jobs to deal with different project typolog
 
 Automatically merges a Pull request satisfying conditions (i.e. `dependabot` PR targeting minor or patch updates).
 
+### 🙏 Give thanks
+
+[workflows/thank.yml](src/.github/workflows/thank.yml)
+
+Give thanks to the used dependencies by starring the corresponding GitHub repositories.
+
 ## 🧑‍💻 Usage
 
 The workflows contains reusable GitHub actions jobs that can be used as a base recipe for your own workflows. Just pick the ones you're interrested in and add them to your `.github/workflows/xxxx.yml` workflow file in your repository.
