@@ -67,6 +67,18 @@ Automatically merges a Pull request satisfying conditions (i.e. `dependabot` PR 
 
 Give thanks to the used dependencies by starring the corresponding GitHub repositories.
 
+### 🎨 Export draw.io
+
+[workflows/export-drawio.yml](src/.github/workflows/export-drawio.yml)
+
+Export [draw.io](https://app.diagrams.net/) diagrams to usable png files.
+
+### ☸️ K8S cluster graphs
+
+[workflows/k8s-cluster-graphs.yml](src/.github/workflows/k8s-cluster-graphs.yml)
+
+Create Kubernetes cluster graphs representing its state using the `kubectl` [graph plugin](https://github.com/steveteuber/kubectl-graph).
+
 ## 🧑‍💻 Usage
 
 The workflows contains reusable GitHub actions jobs that can be used as a base recipe for your own workflows. Just pick the ones you're interrested in and add them to your `.github/workflows/xxxx.yml` workflow file in your repository.

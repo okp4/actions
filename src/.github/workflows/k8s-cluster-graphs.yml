@@ -1,0 +1,74 @@
+name: K8S cluster graphs
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # every day at 00:00
+
+  workflow_dispatch:
+
+jobs:
+  update-cluster-graphs:
+    runs-on: ubuntu-20.04
+    env:
+      KUBECTL_VERSION: v1.21.4
+      KREW_VERSION: v0.4.2
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.OKP4_TOKEN }}
+
+      - name: Set up Graphviz
+        run: |
+          sudo apt-get update
+          sudo apt install --no-install-recommends -y graphviz=2.42.2-3build2
+      - name: Set up Go
+        uses: actions/setup-go@v2.1.4
+        with:
+          go-version: 1.17.4
+
+      - name: Set up kubectl
+        run: |
+          curl -fsSL -o ./kubectl https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl
+          chmod +x ./kubectl
+          sudo mv ./kubectl /usr/bin/kubectl
+
+      - name: Set up kubernetes config
+        run: |
+          echo ${{ secrets.KUBECONFIG }} > config_enc
+          cat config_enc | base64 -d > config
+          rm config_enc
+
+      - name: Set up krew
+        run: |
+          cd "$(mktemp -d)"
+          curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/download/${KREW_VERSION}/krew-linux_amd64.tar.gz"
+          tar zxvf krew-linux_amd64.tar.gz
+          ./krew-linux_amd64 install krew
+          echo "${KREW_ROOT:-$HOME/.krew}/bin:$PATH" >> $GITHUB_PATH
+
+      - name: Set up graphql graph
+        run: |
+          kubectl krew install graph
+
+      - name: Generate graphs
+        run: |
+          mkdir -p assets
+          kubectl graph --kubeconfig config nodes -n operator,ingress,production,staging \
+            | dot -T png -Gdpi=150 -Glayout=dot -Grankdir=LR -Nshape=rect -o assets/cluster-nodes.png
+          kubectl graph --kubeconfig config deployments -n production \
+            | dot -T png -Gdpi=150 -Glayout=dot -Grankdir=LR -Nshape=rect -o assets/cluster-deployments-production.png
+          kubectl graph --kubeconfig config services,deployments,pods -n operator,ingress,production,staging \
+            | dot -T png -Gdpi=150 -Glayout=dot -Grankdir=LR -Nshape=rect -o assets/cluster-pods.png
+          kubectl graph --kubeconfig config persistentvolumeclaims -A \
+            | dot -T png -Gdpi=150 -Glayout=dot -Grankdir=LR -Nshape=rect -o assets/cluster-volumes.png
+
+      - name: Commit possible changed images
+        uses: stefanzweifel/git-auto-commit-action@v4.12.0
+        with:
+          commit_user_name: ${{ secrets.OKP4_BOT_GIT_COMMITTER_NAME }}
+          commit_user_email: ${{ secrets.OKP4_BOT_GIT_COMMITTER_EMAIL }}
+          commit_author: ${{ secrets.OKP4_BOT_GIT_AUTHOR_NAME }} <${{ secrets.OKP4_BOT_GIT_AUTHOR_EMAIL }}>
+          commit_message: 'docs(diagrams): update diagrams according to cluster state'
+          file_pattern: assets/*.png
