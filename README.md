@@ -2,7 +2,7 @@
 
 > The repository of GitHub CI/CD workflows used @[okp4].
 
-[![conventional commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+[![status](https://img.shields.io/github/workflow/status/okp4/actions/Lint?style=for-the-badge)](https://github.com/okp4/actions/actions/workflows/lint.yml) [![license](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg?style=for-the-badge)](https://opensource.org/licenses/BSD-3-Clause) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg?style=for-the-badge)](https://www.contributor-covenant.org/version/2/0/code_of_conduct/) [![conventional commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=for-the-badge)](https://conventionalcommits.org)
 
 ## 💡 Purpose
 
@@ -86,5 +86,15 @@ The workflows contains reusable GitHub actions jobs that can be used as a base r
 ### 🛡 Access Token
 
 Most jobs need a specific access token with appropriate permissions to run correctly. This token is named `OKP4_TOKEN`, and is defined at the level of the organization. If needed, read the documentation on creating a [PA token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token).
+
+## Contributing
+
+This project welcomes contributions and suggestions.  We appreciate any help you're willing to give, so don't hesitate to open issues and/or submit pull requests.
+
+Remember this is a Github Action repository that we use on our projects at [OKP4](https://github.com/okp4). For this reason, we may have to refuse change requests simply because they do not meet our internal requirements, not because they are irrelevant.
+
+## Code of Conduct
+
+This project has adopted the [Contributor Covenant](https://www.contributor-covenant.org/). Please visit their [FAQs Page](https://www.contributor-covenant.org/faq/) for more information, or contact [opensource@okp4.com](mailto:opensource@okp4.com) with any additional questions or comments.
 
 [okp4]: https://okp4.network
