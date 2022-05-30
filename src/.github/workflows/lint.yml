@@ -206,6 +206,23 @@ jobs:
         with:
           path: "."
 
+  lint-ontology:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Setup ruby environment
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: "2.6"
+
+      - run: |
+          gem install rdf-turtle
+      - name: Validate ontology file
+        run: |
+          rdf validate --validate src/okp4.ttl
+
   report-npm-new-dependencies:
     runs-on: ubuntu-20.04
     if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
