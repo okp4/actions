@@ -93,4 +93,8 @@ This project welcomes contributions and suggestions.  We appreciate any help you
 
 Remember this is a Github Action repository that we use on our projects at [OKP4](https://github.com/okp4). For this reason, we may have to refuse change requests simply because they do not meet our internal requirements, not because they are irrelevant.
 
+## Code of Conduct
+
+This project has adopted the [Contributor Covenant](https://www.contributor-covenant.org/). Please visit their [FAQs Page](https://www.contributor-covenant.org/faq/) for more information, or contact [opensource@okp4.com](mailto:opensource@okp4.com) with any additional questions or comments.
+
 [okp4]: https://okp4.network
