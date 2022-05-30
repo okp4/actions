@@ -87,4 +87,10 @@ The workflows contains reusable GitHub actions jobs that can be used as a base r
 
 Most jobs need a specific access token with appropriate permissions to run correctly. This token is named `OKP4_TOKEN`, and is defined at the level of the organization. If needed, read the documentation on creating a [PA token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token).
 
+## Contributing
+
+This project welcomes contributions and suggestions.  We appreciate any help you're willing to give, so don't hesitate to open issues and/or submit pull requests.
+
+Remember this is a Github Action repository that we use on our projects at [OKP4](https://github.com/okp4). For this reason, we may have to refuse change requests simply because they do not meet our internal requirements, not because they are irrelevant.
+
 [okp4]: https://okp4.network
