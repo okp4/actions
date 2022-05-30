@@ -1,0 +1,46 @@
+name: Reminder
+
+on:
+  schedule:
+    - cron: "0 10 * * 1"
+
+  workflow_dispatch:
+
+env:
+  CHANNEL_ID: 123456
+
+jobs:
+  send-slack-message:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Post a reminder to Slack
+        uses: slackapi/slack-github-action@v1.18.0
+        with:
+          channel-id: ${{ env.CHANNEL_ID }}
+          payload: |
+            {
+              "text": "Hello! :hello:",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Hello! :hello:"
+                  }
+                },
+                {
+                  "type": "divider"
+                },
+                {
+                  "type": "context",
+                  "elements": [
+                    {
+                      "type": "mrkdwn",
+                      "text": ":pushpin: See <https://github.com/okp4/actions>."
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
