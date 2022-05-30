@@ -282,3 +282,15 @@ jobs:
         with:
           schema: "main:graph/schema.graphqls"
           fail-on-breaking: false
+
+
+  lint-shell:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Lint shell scripts
+        uses: ludeeus/action-shellcheck@master
+        with:
+          scandir: "./shell"

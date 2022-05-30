@@ -1,0 +1,37 @@
+name: Export draw.io
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - src/*.drawio
+      - .github/workflows/export-drawio.yml
+
+concurrency:
+  group: drawio-export-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  drawio-export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.OKP4_TOKEN }}
+
+      - name: Export draw.io files
+        uses: rlespinasse/drawio-export-action@v2
+        with:
+          path: src
+          format: png
+          transparent: true
+          output: ../assets
+
+      - name: Commit possible changed images
+        uses: stefanzweifel/git-auto-commit-action@v4.12.0
+        with:
+          commit_user_name: ${{ secrets.OKP4_BOT_GIT_COMMITTER_NAME }}
+          commit_user_email: ${{ secrets.OKP4_BOT_GIT_COMMITTER_EMAIL }}
+          commit_author: ${{ secrets.OKP4_BOT_GIT_AUTHOR_NAME }} <${{ secrets.OKP4_BOT_GIT_AUTHOR_EMAIL }}>
+          commit_message: 'docs(drawio): update drawio diagrams'

@@ -47,9 +47,41 @@ Build the different artifacts produced from the codebase.
 
 The workflow contains a large set of jobs to deal with different project typologies (technology, programming language...).
 
+### 🚀 Publish
+
+[workflows/publish.yml](src/.github/workflows/publish.yml)
+
+Publish the different artifacts produced from the codebase.
+
+The workflow contains a large set of jobs to deal with different project typologies (technology, programming language...).
+
+### 🪄 Auto merge
+
+[workflows/auto-merge.yml](src/.github/workflows/auto-merge.yml)
+
+Automatically merges a Pull request satisfying conditions (i.e. `dependabot` PR targeting minor or patch updates).
+
+### 🙏 Give thanks
+
+[workflows/thank.yml](src/.github/workflows/thank.yml)
+
+Give thanks to the used dependencies by starring the corresponding GitHub repositories.
+
+### 🎨 Export draw.io
+
+[workflows/export-drawio.yml](src/.github/workflows/export-drawio.yml)
+
+Export [draw.io](https://app.diagrams.net/) diagrams to usable png files.
+
+### ☸️ K8S cluster graphs
+
+[workflows/k8s-cluster-graphs.yml](src/.github/workflows/k8s-cluster-graphs.yml)
+
+Create Kubernetes cluster graphs representing its state using the `kubectl` [graph plugin](https://github.com/steveteuber/kubectl-graph).
+
 ## 🧑‍💻 Usage
 
-The workflows contain reusable GitHub actions that can be used as a base recipe for your workflow. Just pick the ones you're interrested in and add them to your `.github/workflows/xxxx.yml` workflow file in your repository.
+The workflows contains reusable GitHub actions jobs that can be used as a base recipe for your own workflows. Just pick the ones you're interrested in and add them to your `.github/workflows/xxxx.yml` workflow file in your repository.
 
 ### 🛡 Access Token
 
