@@ -47,6 +47,14 @@ Build the different artifacts produced from the codebase.
 
 The workflow contains a large set of jobs to deal with different project typologies (technology, programming language...).
 
+### ☎️ 🚀 PR Publish
+
+[workflows/publish-pr.yml](src/.github/workflows/publish-pr.yml)
+
+Publish artifacts based on a branch codebase, by commenting the pull request with `/publish` message.
+
+The workflow contains a large set of jobs to deal with different project typologies (technology, programming language...).
+
 ### 🚀 Publish
 
 [workflows/publish.yml](src/.github/workflows/publish.yml)
@@ -89,7 +97,7 @@ Most jobs need a specific access token with appropriate permissions to run corre
 
 ## Contributing
 
-This project welcomes contributions and suggestions.  We appreciate any help you're willing to give, so don't hesitate to open issues and/or submit pull requests.
+This project welcomes contributions and suggestions. We appreciate any help you're willing to give, so don't hesitate to open issues and/or submit pull requests.
 
 Remember this is a Github Action repository that we use on our projects at [OKP4](https://github.com/okp4). For this reason, we may have to refuse change requests simply because they do not meet our internal requirements, not because they are irrelevant.
 
