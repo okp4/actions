@@ -121,7 +121,7 @@ jobs:
             feat: update storybook site (auto)
 
   publish-pypi:
-    if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
+    if: contains(github.ref, 'refs/tags/')
     runs-on: ubuntu-20.04
     steps:
       - name: Check out repository
