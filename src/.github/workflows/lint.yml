@@ -38,6 +38,20 @@ jobs:
           args: "**/*.md"
           ignore: "CHANGELOG.md"
 
+  lint-markdown-link:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Lint markdown links
+        uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          use-quiet-mode: "yes"
+          use-verbose-mode: "yes"
+          base-branch: "main"
+          config-file: ".mlc_config.json"
+
   lint-yaml:
     runs-on: ubuntu-20.04
     steps:
