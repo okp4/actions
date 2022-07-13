@@ -73,3 +73,7 @@ install_crate = { crate_name = "grcov" }
 script = '''
 grcov . --binary-path ./target/debug/ -s . -t lcov --branch --ignore-not-existing --ignore "*cargo*" -o coverage.lcov
 '''
+
+[tasks.publish]
+args = ["publish", "--token", "${CARGO_API_TOKEN}"]
+command = "cargo"
