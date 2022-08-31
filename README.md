@@ -2,11 +2,11 @@
 
 > The repository of GitHub CI/CD workflows used @[okp4].
 
-[![status](https://img.shields.io/github/workflow/status/okp4/actions/Lint?style=for-the-badge)](https://github.com/okp4/actions/actions/workflows/lint.yml) [![license](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg?style=for-the-badge)](https://opensource.org/licenses/BSD-3-Clause) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg?style=for-the-badge)](https://www.contributor-covenant.org/version/2/0/code_of_conduct/) [![conventional commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=for-the-badge)](https://conventionalcommits.org)
+[![status](https://img.shields.io/github/workflow/status/okp4/actions/Lint?style=for-the-badge&logo=github)](https://github.com/okp4/actions/actions/workflows/lint.yml) [![license](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg?style=for-the-badge)](https://opensource.org/licenses/BSD-3-Clause) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg?style=for-the-badge)](https://www.contributor-covenant.org/version/2/0/code_of_conduct/) [![conventional commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=for-the-badge&logo=conventionalcommits)](https://conventionalcommits.org)
 
 ## 💡 Purpose
 
-This is a collection of GitHub Actions that we use for our projects @[okp4] and that can be useful to others.
+This is a collection of GitHub Actions that we use for our projects @[OKP4](https://okp4.network) and that can be useful to others.
 
 All the workflows and actions defined in this repository promotes the practices of CI (i.e. Continuous Integration) and CD (Continuous Deployment|Delivery) and enable the automation of operations that cover the following categories:
 
@@ -21,7 +21,7 @@ All the workflows and actions defined in this repository promotes the practices 
 
 ## ⚙️ Workflows
 
-The actions are organized arount serveral workflows, described hereafter.
+The actions are organized around several workflows, described hereafter.
 
 ### 💚 Lint
 
@@ -75,6 +75,12 @@ Automatically merges a Pull request satisfying conditions (i.e. `dependabot` PR 
 
 Give thanks to the used dependencies by starring the corresponding GitHub repositories.
 
+### 🚶 ‍️Follow contributor
+
+[workflows/thank.yml](src/.github/workflows/follow-contributor.yml)
+
+Make sure our [bot](https://github.com/bot-anik) follows anyone opening a PR.
+
 ### 🎨 Export draw.io
 
 [workflows/export-drawio.yml](src/.github/workflows/export-drawio.yml)
@@ -89,7 +95,7 @@ Create Kubernetes cluster graphs representing its state using the `kubectl` [gra
 
 ## 🧑‍💻 Usage
 
-The workflows contains reusable GitHub actions jobs that can be used as a base recipe for your own workflows. Just pick the ones you're interrested in and add them to your `.github/workflows/xxxx.yml` workflow file in your repository.
+The workflows contain reusable GitHub actions jobs that can be used as a base recipe for your own workflows. Just pick the ones you're interested in and add them to your `.github/workflows/xxxx.yml` workflow file in your repository.
 
 ### 🛡 Access Token
 
