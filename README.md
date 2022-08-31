@@ -95,14 +95,9 @@ The workflows contains reusable GitHub actions jobs that can be used as a base r
 
 Most jobs need a specific access token with appropriate permissions to run correctly. This token is named `OKP4_TOKEN`, and is defined at the level of the organization. If needed, read the documentation on creating a [PA token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token).
 
-## Contributing
+## You want to get involved? 😍
 
-This project welcomes contributions and suggestions. We appreciate any help you're willing to give, so don't hesitate to open issues and/or submit pull requests.
+Please check out OKP4 health files :
 
-Remember this is a Github Action repository that we use on our projects at [OKP4](https://github.com/okp4). For this reason, we may have to refuse change requests simply because they do not meet our internal requirements, not because they are irrelevant.
-
-## Code of Conduct
-
-This project has adopted the [Contributor Covenant](https://www.contributor-covenant.org/). Please visit their [FAQs Page](https://www.contributor-covenant.org/faq/) for more information, or contact [opensource@okp4.com](mailto:opensource@okp4.com) with any additional questions or comments.
-
-[okp4]: https://okp4.network
+- [Contributing](https://github.com/okp4/.github/blob/main/CONTRIBUTING.md)
+- [Code of conduct](https://github.com/okp4/.github/blob/main/CODE_OF_CONDUCT.md)
