@@ -29,7 +29,7 @@ jobs:
           output: ../assets
 
       - name: Commit possible changed images
-        uses: stefanzweifel/git-auto-commit-action@v4.12.0
+        uses: stefanzweifel/git-auto-commit-action@v4.14.1
         with:
           commit_user_name: ${{ secrets.OKP4_BOT_GIT_COMMITTER_NAME }}
           commit_user_email: ${{ secrets.OKP4_BOT_GIT_COMMITTER_EMAIL }}

@@ -134,7 +134,7 @@ jobs:
           yarn
           yarn build-storybook
       - name: Deploy storybook
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        uses: JamesIves/github-pages-deploy-action@v4.4.0
         with:
           branch: gh-pages
           folder: dist
@@ -154,14 +154,14 @@ jobs:
 
       - name: Set up context
         id: project_context
-        uses: FranzDiebold/github-env-vars-action@v2.3.1
+        uses: FranzDiebold/github-env-vars-action@v2.5.0
 
       - uses: actions/setup-python@v3
         with:
           python-version: 3.9
 
       - name: Install Python Poetry
-        uses: abatilo/actions-poetry@v2.1.4
+        uses: abatilo/actions-poetry@v2.1.6
         with:
           poetry-version: 1.1.11
 
