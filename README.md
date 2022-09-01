@@ -2,11 +2,11 @@
 
 > The repository of GitHub CI/CD workflows used @[okp4].
 
-[![status](https://img.shields.io/github/workflow/status/okp4/actions/Lint?style=for-the-badge)](https://github.com/okp4/actions/actions/workflows/lint.yml) [![license](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg?style=for-the-badge)](https://opensource.org/licenses/BSD-3-Clause) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg?style=for-the-badge)](https://www.contributor-covenant.org/version/2/0/code_of_conduct/) [![conventional commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=for-the-badge)](https://conventionalcommits.org)
+[![status](https://img.shields.io/github/workflow/status/okp4/actions/Lint?style=for-the-badge&logo=github)](https://github.com/okp4/actions/actions/workflows/lint.yml) [![license](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg?style=for-the-badge)](https://opensource.org/licenses/BSD-3-Clause) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg?style=for-the-badge)](https://www.contributor-covenant.org/version/2/0/code_of_conduct/) [![conventional commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=for-the-badge&logo=conventionalcommits)](https://conventionalcommits.org)
 
 ## 💡 Purpose
 
-This is a collection of GitHub Actions that we use for our projects @[okp4] and that can be useful to others.
+This is a collection of GitHub Actions that we use for our projects @[OKP4](https://okp4.network) and that can be useful to others.
 
 All the workflows and actions defined in this repository promotes the practices of CI (i.e. Continuous Integration) and CD (Continuous Deployment|Delivery) and enable the automation of operations that cover the following categories:
 
@@ -21,7 +21,7 @@ All the workflows and actions defined in this repository promotes the practices 
 
 ## ⚙️ Workflows
 
-The actions are organized arount serveral workflows, described hereafter.
+The actions are organized around several workflows, described hereafter.
 
 ### 💚 Lint
 
@@ -75,6 +75,12 @@ Automatically merges a Pull request satisfying conditions (i.e. `dependabot` PR 
 
 Give thanks to the used dependencies by starring the corresponding GitHub repositories.
 
+### 🚶 ‍️Follow contributor
+
+[workflows/thank.yml](src/.github/workflows/follow-contributor.yml)
+
+Make sure our [bot](https://github.com/bot-anik) follows anyone opening a PR.
+
 ### 🎨 Export draw.io
 
 [workflows/export-drawio.yml](src/.github/workflows/export-drawio.yml)
@@ -89,20 +95,15 @@ Create Kubernetes cluster graphs representing its state using the `kubectl` [gra
 
 ## 🧑‍💻 Usage
 
-The workflows contains reusable GitHub actions jobs that can be used as a base recipe for your own workflows. Just pick the ones you're interrested in and add them to your `.github/workflows/xxxx.yml` workflow file in your repository.
+The workflows contain reusable GitHub actions jobs that can be used as a base recipe for your own workflows. Just pick the ones you're interested in and add them to your `.github/workflows/xxxx.yml` workflow file in your repository.
 
 ### 🛡 Access Token
 
 Most jobs need a specific access token with appropriate permissions to run correctly. This token is named `OKP4_TOKEN`, and is defined at the level of the organization. If needed, read the documentation on creating a [PA token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token).
 
-## Contributing
+## You want to get involved? 😍
 
-This project welcomes contributions and suggestions. We appreciate any help you're willing to give, so don't hesitate to open issues and/or submit pull requests.
+Please check out OKP4 health files :
 
-Remember this is a Github Action repository that we use on our projects at [OKP4](https://github.com/okp4). For this reason, we may have to refuse change requests simply because they do not meet our internal requirements, not because they are irrelevant.
-
-## Code of Conduct
-
-This project has adopted the [Contributor Covenant](https://www.contributor-covenant.org/). Please visit their [FAQs Page](https://www.contributor-covenant.org/faq/) for more information, or contact [opensource@okp4.com](mailto:opensource@okp4.com) with any additional questions or comments.
-
-[okp4]: https://okp4.network
+- [Contributing](https://github.com/okp4/.github/blob/main/CONTRIBUTING.md)
+- [Code of conduct](https://github.com/okp4/.github/blob/main/CODE_OF_CONDUCT.md)
