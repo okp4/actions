@@ -81,6 +81,12 @@ Give thanks to the used dependencies by starring the corresponding GitHub reposi
 
 Make sure our [bot](https://github.com/bot-anik) follows anyone opening a PR.
 
+### 🎉 Notify release
+
+[workflows/notify-release.yml](src/.github/workflows/notify-release.yml)
+
+This action can be used to spread the word when a new release is available. We use it to send a message to our discord server.
+
 ### 🎨 Export draw.io
 
 [workflows/export-drawio.yml](src/.github/workflows/export-drawio.yml)
