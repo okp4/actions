@@ -77,7 +77,7 @@ Give thanks to the used dependencies by starring the corresponding GitHub reposi
 
 ### 🚶 ‍️Follow contributor
 
-[workflows/thank.yml](src/.github/workflows/follow-contributor.yml)
+[workflows/follow-contributor.yml](src/.github/workflows/follow-contributor.yml)
 
 Make sure our [bot](https://github.com/bot-anik) follows anyone opening a PR.
 
