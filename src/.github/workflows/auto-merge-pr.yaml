@@ -1,0 +1,32 @@
+name: Auto merge PR
+
+on:
+  pull_request:
+    types:
+      - labeled
+      - ready_for_review
+      - review_request_removed
+      - review_requested
+      - synchronize
+      - unlabeled
+  pull_request_review:
+    types:
+      - dismissed
+      - submitted
+
+jobs:
+  merge:
+    runs-on: ubuntu-20.04
+    name: Merge
+    steps:
+    - name: Integration check
+      uses: squalrus/merge-bot@v0.4.5
+      with:
+        GITHUB_TOKEN: ${{ secrets.OKP4_TOKEN }}
+        test: false
+        reviewers: true
+        labels: ""
+        blocking_labels: ""
+        checks_enabled: true
+        method: merge
+        delete_source_branch: false
