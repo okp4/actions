@@ -28,4 +28,4 @@ jobs:
           blocking_labels: ""
           checks_enabled: true
           method: merge
-          delete_source_branch: false
+          delete_source_branch: true
