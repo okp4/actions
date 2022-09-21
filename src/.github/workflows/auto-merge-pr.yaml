@@ -17,9 +17,8 @@ on:
 jobs:
   merge:
     runs-on: ubuntu-20.04
-    name: Merge
     steps:
-      - name: Integration check
+      - name: Merge the PR (after approval)
         uses: squalrus/merge-bot@v0.4.5
         with:
           GITHUB_TOKEN: ${{ secrets.OKP4_TOKEN }}
