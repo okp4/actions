@@ -2,7 +2,7 @@
 
 > The repository of GitHub CI/CD workflows used @[okp4].
 
-[![status](https://img.shields.io/github/workflow/status/okp4/actions/Lint?style=for-the-badge&logo=github)](https://github.com/okp4/actions/actions/workflows/lint.yml) [![license](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg?style=for-the-badge)](https://opensource.org/licenses/BSD-3-Clause) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg?style=for-the-badge)](https://www.contributor-covenant.org/version/2/0/code_of_conduct/) [![conventional commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=for-the-badge&logo=conventionalcommits)](https://conventionalcommits.org)
+[![status](https://img.shields.io/github/workflow/status/okp4/actions/Lint?style=for-the-badge&logo=github)](https://github.com/okp4/actions/actions/workflows/lint.yml) [![license](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg?style=for-the-badge)](https://opensource.org/licenses/BSD-3-Clause) [![contributor covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg?style=for-the-badge)](https://github.com/okp4/.github/blob/main/CODE_OF_CONDUCT.md) [![conventional commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=for-the-badge&logo=conventionalcommits)](https://conventionalcommits.org)
 
 ## 💡 Purpose
 
