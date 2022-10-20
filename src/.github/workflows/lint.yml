@@ -453,3 +453,29 @@ jobs:
       - name: Lint toml
         run: |
           cargo make lint-toml
+
+  lint-graphviz:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Graphviz
+        run: |
+          sudo apt install --no-install-recommends -y graphviz=2.42.2-6
+
+      - name: Lint dot files
+        run: |
+          find ./ -type f -name "*.dot" -exec sh -c '
+              for file do
+              if ! dot "$file" > /dev/null; then
+                  echo "❌ $file"
+                  export FAILED=1
+              else
+                  echo "✅ $file"
+              fi
+              done
+              if [ "${FAILED}" = "1" ]; then
+              exit 1
+              fi
+          ' sh {} +
