@@ -339,6 +339,7 @@ jobs:
         uses: ludeeus/action-shellcheck@master
         with:
           scandir: "./shell"
+          version: "v0.8.0"
 
   lint-cargo-toml:
     runs-on: ubuntu-20.04
