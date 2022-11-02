@@ -154,7 +154,7 @@ jobs:
 
       - name: Set up context
         id: project_context
-        uses: FranzDiebold/github-env-vars-action@v2.5.0
+        uses: FranzDiebold/github-env-vars-action@v2.7.0
 
       - uses: actions/setup-python@v3
         with:
