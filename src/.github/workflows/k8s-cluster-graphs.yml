@@ -8,7 +8,7 @@ on:
 
 jobs:
   update-cluster-graphs:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     env:
       KUBECTL_VERSION: v1.21.4
       KREW_VERSION: v0.4.2

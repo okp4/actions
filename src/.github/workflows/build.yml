@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   build-docker:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -25,7 +25,7 @@ jobs:
           docker build .
 
   build-go:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -40,7 +40,7 @@ jobs:
           make build
 
   build-kotlin:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -62,7 +62,7 @@ jobs:
           arguments: build -x check
 
   build-yarn:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -80,7 +80,7 @@ jobs:
           yarn build
 
   build-poetry:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -103,7 +103,7 @@ jobs:
           poetry build
 
   build-rust:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
