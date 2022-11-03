@@ -11,10 +11,10 @@ env:
 
 jobs:
   send-slack-message:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Post a reminder to Slack
-        uses: slackapi/slack-github-action@v1.21.0
+        uses: slackapi/slack-github-action@v1.23.0
         with:
           channel-id: ${{ env.CHANNEL_ID }}
           payload: |

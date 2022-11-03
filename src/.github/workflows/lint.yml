@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   lint-commits:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: github.actor != 'dependabot[bot]'
     steps:
       - name: Check out repository
@@ -27,7 +27,7 @@ jobs:
         uses: wagoid/commitlint-github-action@v4
 
   lint-markdown:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -39,7 +39,7 @@ jobs:
           ignore: "CHANGELOG.md"
 
   lint-markdown-link:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -53,7 +53,7 @@ jobs:
           config-file: ".mlc_config.json"
 
   lint-yaml:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -62,7 +62,7 @@ jobs:
         uses: ibiqlik/action-yamllint@v3.1.0
 
   lint-json:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -87,7 +87,7 @@ jobs:
           ' sh {} +
 
   lint-dockerfile:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: github.actor != 'dependabot[bot]'
     steps:
       - name: Check out repository
@@ -97,14 +97,14 @@ jobs:
         uses: hadolint/hadolint-action@v2.1.0
 
   lint-go:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
 
       - name: Find changed go files
         id: changed-go-files
-        uses: tj-actions/changed-files@v19
+        uses: tj-actions/changed-files@v34
         with:
           files: |
             **/*.go
@@ -118,7 +118,7 @@ jobs:
           version: v1.45
 
   lint-sql:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -129,7 +129,7 @@ jobs:
           path: "."
 
   lint-ts:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -148,7 +148,7 @@ jobs:
           yarn lint
 
   lint-kotlin:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -168,7 +168,7 @@ jobs:
           arguments: lint
 
   lint-poetry:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -188,7 +188,7 @@ jobs:
 
   lint-python:
     needs: lint-poetry
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -216,7 +216,7 @@ jobs:
           path: "."
 
   lint-R:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -236,7 +236,7 @@ jobs:
         shell: Rscript {0}
 
   lint-ontology:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -253,7 +253,7 @@ jobs:
           rdf validate --validate src/okp4.ttl
 
   report-npm-new-dependencies:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
     steps:
       - name: Check for new NPM dependencies
@@ -262,7 +262,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
   lint-branch-name:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: github.actor != 'dependabot[bot]' && github.event_name == 'pull_request' && (github.event.action == 'opened' || github.event.action == 'reopened')
     steps:
       - name: Check branch name conventions
@@ -297,7 +297,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.OKP4_TOKEN }}
 
   lint-graphql:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: github.actor != 'dependabot[bot]'
     steps:
       - name: Check out repository
@@ -317,7 +317,7 @@ jobs:
           graphql-schema-linter
 
   check-graphqls:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: github.actor != 'dependabot[bot]'
     steps:
       - name: Check out repository
@@ -330,7 +330,7 @@ jobs:
           fail-on-breaking: false
 
   lint-shell:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -342,14 +342,14 @@ jobs:
           version: "v0.8.0"
 
   lint-cargo-toml:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
 
       - name: Find changed rust files
         id: changed-rust-cargo
-        uses: tj-actions/changed-files@v23
+        uses: tj-actions/changed-files@v34
         with:
           files: |
             Cargo.toml
@@ -372,7 +372,7 @@ jobs:
           cargo-toml-lint Cargo.toml
 
   lint-rust:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     timeout-minutes: 10
     steps:
       - name: Check out repository
@@ -380,7 +380,7 @@ jobs:
 
       - name: Find changed rust files
         id: changed-rust-files
-        uses: tj-actions/changed-files@v23
+        uses: tj-actions/changed-files@v34
         with:
           files: |
             **/*.rs
@@ -405,7 +405,7 @@ jobs:
           cargo make lint-rust
 
   lint-rust-format:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -425,7 +425,7 @@ jobs:
           cargo make lint-rust-format
 
   lint-toml:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
