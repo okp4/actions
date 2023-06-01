@@ -1,0 +1,63 @@
+name: "Label issues"
+
+on:
+  issues:
+    types: [opened, reopened]
+
+jobs:
+  check_description:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Create labels for issues
+        uses: actions/github-script@v6
+        with:
+          run: |
+            github.rest.issues.createLabel({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              color: "B60205",
+              name: "bug 🐞",
+              description: "bugs and defects"
+            })
+            github.rest.issues.createLabel({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              color: "1D76DB",
+              name: "docs 📝",
+              description: "documentation"
+            })
+             github.rest.issues.createLabel({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              color: "BFD4F2",
+              name: "enhancement 💯",
+              description: "improving already existing features"
+            })
+             github.rest.issues.createLabel({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              color: "C2E0C6",
+              name: "EPIC ⛰",
+              description: "epic containing multiple user stories"
+            })
+             github.rest.issues.createLabel({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              color: "0E8A16",
+              name: "feature 🤌",
+              description: "new features"
+            })
+             github.rest.issues.createLabel({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              color: "FEF2C0",
+              name: "refactoring ⌨️",
+              description: "code refactoring and improvement"
+            })
+            github.rest.issues.createLabel({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              color: "D93F0B",
+              name: "urgent 🚨",
+              description: "urgent issues that require work ASAP"
+            })
