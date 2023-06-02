@@ -1,8 +1,10 @@
 name: "Label issues"
 
 on:
-  issues:
-    types: [opened, reopened]
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   check_description:
