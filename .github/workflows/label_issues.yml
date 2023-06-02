@@ -13,6 +13,7 @@ jobs:
       - name: Create labels for issues
         uses: actions/github-script@v6
         with:
+          github_token: ${{ secrets.OKP4_TOKEN }}
           script: |
             github.rest.issues.createLabel({
               owner: context.repo.owner,
