@@ -13,7 +13,7 @@ jobs:
       - name: Create labels for issues
         uses: actions/github-script@v6
         with:
-          github_token: ${{ secrets.OKP4_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.OKP4_TOKEN }}
           script: |
             github.rest.issues.createLabel({
               owner: context.repo.owner,
@@ -64,3 +64,5 @@ jobs:
               name: "urgent 🚨",
               description: "urgent issues that require work ASAP"
             })
+    env:
+      GITHUB_TOKEN: ${{ secrets.OKP4_TOKEN }}
